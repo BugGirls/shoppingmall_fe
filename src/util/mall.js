@@ -18,7 +18,8 @@ var _mall = {
 			url 		: param.url 	|| '',
 			dataType 	: param.type 	|| 'json',
 			data 		: param.data 	|| '',
-			success 	: function(res) {
+			success 	: function(res) {// res为请求成功时返回的响应数据
+				console.log(res);
 				if (0 === res.status) {// 请求成功
 					typeof param.success === 'function' && param.success(res.data, res.msg);
 				} else if (10 === res.status) {// 没有登录状态，需要强制登录
@@ -28,6 +29,7 @@ var _mall = {
 				}
 			},
 			error 		: function(err) {
+				console.log(err);
 				typeof param.error === 'function' && param.error(err.statusText);
 			}
 		})
@@ -78,7 +80,7 @@ var _mall = {
 	// 验证方法，包括手机号验证、邮箱验证、非空验证
 	// value：验证的参数
 	// type：验证的类型（非空、手机号、邮箱）
-	validata : function(value, type) {
+	validate : function(value, type) {
 		var value = $.trim(value);
 		// 非空验证
 		if ('require' === type) {
@@ -96,7 +98,7 @@ var _mall = {
 	// 统一登录处理
 	// redirect参数：表示登陆后返回登录之前的页面
 	doLogin : function() {
-		window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+		window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
 	},
 	// 跳转到主页
 	goHome : function() {

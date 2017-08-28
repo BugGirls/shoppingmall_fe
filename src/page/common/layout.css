@@ -31,6 +31,24 @@ input[type='checkbox'] {
 	overflow: hidden;
 }
 
+/*panel*/
+.panel {
+	padding: 10px;
+	margin-bottom: 10px;
+	background: #fff;
+}
+.panel .panel-title {
+	padding: 10px;
+	font-size: 14px;
+	color: #666;
+	font-weight: bold;
+	border-bottom: 1px solid #eee;
+}
+.panel .panel-body {
+	padding: 10px;
+	overflow: hidden;
+}
+
 /*全局通用样式*/
 /*隐藏类*/
 .hide {
@@ -43,7 +61,7 @@ input[type='checkbox'] {
 	text-decoration: none;
 }
 .link:hover {
-	color: #e80012;
+	color: #3399ff;
 }
 .link-text {
 	color: #999;
@@ -57,7 +75,7 @@ input[type='checkbox'] {
 	line-height: 40px;
 	vertical-align: middle;
 	border: none;
-	background: #c60023;
+	background: #3399ff;
 	font-size: 17px;
 	font-weight: bold;
 	color: #fff;

@@ -4,6 +4,7 @@
 require('./index.css');
 // 引入通用工具类
 var _mall 			= require('util/mall.js');
+// 引入渲染页面
 var templateIndex 	= require('./index.string');
 
 // 需要传入一个option对象
@@ -13,8 +14,8 @@ var navSide = {
 		navList : [// 导航列表
 			{name: 'user-center', desc: '个人中心', href: './user-center.html'},
 			{name: 'order-list', desc: '我的订单', href: './order-list.html'},
-			{name: 'pass-update', desc: '修改密码', href: './pass-update.html'},
-			{name: 'about', desc: '关于mall', href: './about.html'}
+			{name: 'pass-update', desc: '修改密码', href: './user-pass-update.html'},
+			{name: 'about', desc: '关于Empress', href: './about.html'}
 		]
 	},
 	init : function(option) {

@@ -9,7 +9,8 @@ var nav = {
 	init : function() {
 		this.bindEvent();
 		this.loadUserInfo();
-		this.loadCartCount();
+		// this.loadCartCount();
+		// 当执行window.location.reload()时，会重新加载当前页面的js信息
 		return this;
 	},
 	// 登录、注册、退出的事件绑定
@@ -20,7 +21,7 @@ var nav = {
 		});
 		// 注册点击事件
 		$('.js-register').click(function() {
-			window.location.href = './register.html';
+			window.location.href = './user-register.html';
 		});
 		// 退出点击事件
 		$('.js-logout').click(function() {
@@ -41,13 +42,13 @@ var nav = {
 		});
 	},
 	// 加载购物车中商品的数量信息
-	loadCartCount : function() {
-		_cart.getCartCount(function(res) {
-			$('.nav .cart-count').text(res || 0);
-		}, function(errMsg) {
-			$('.nav .cart-count').text(0);
-		});
-	}
+	// loadCartCount : function() {
+	// 	_cart.getCartCount(function(res) {
+	// 		$('.nav .cart-count').text(res || 0);
+	// 	}, function(errMsg) {
+	// 		$('.nav .cart-count').text(0);
+	// 	});
+	// }
 };
 
 module.exports = nav.init();

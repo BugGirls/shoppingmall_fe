@@ -1,0 +1,12 @@
+/*用户中心JS*/
+
+.form-line {
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+}
+.form-line .label {
+	display: inline-block;
+	width: 60px;
+	text-align: center;
+}
