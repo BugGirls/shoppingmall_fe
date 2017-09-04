@@ -10,6 +10,16 @@ var _cart = {
 			success : resolve,
 			error	: reject
 		});
+	},
+	// 加入购物车
+	addToCart : function(productInfo, resolve, reject) {
+		_mall.request({
+			url 	: _mall.getServerUrl('/cart/add.do'),
+			data 	: productInfo,
+			method	: 'POST',
+			success : resolve,
+			error	: reject
+		});
 	}
 };
 
