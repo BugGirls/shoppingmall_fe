@@ -1,0 +1,64 @@
+<div class="modal close">
+	<div class="modal-container">
+		<div class="modal-header">
+			{{#isUpdate}}
+				<h1 class="modal-title">修改收货地址</h1>
+			{{/isUpdate}}
+			{{^isUpdate}}
+				<h1 class="modal-title">添加新地址</h1>
+			{{/isUpdate}}
+			<i class="fa fa-close close"></i>
+		</div>
+		<div class="modal-body">
+			<div class="form">
+				<div class="form-line">
+					<label class="label" for="receiver_name">
+						<span class="required">*</span>
+						收件人姓名：
+					</label>
+					<input class="form-item" id="receiver_name" value="{{data.receiverName}}" placeholder="请输入收件人姓名" />
+				</div>
+				<div class="form-line">
+					<label class="label" for="receiver_province">
+						<span class="required">*</span>
+						所在城市：
+					</label>
+					<select class="form-item" id="receiver_province">
+						<option value="">请选择</option>
+					</select>
+					<select class="form-item" id="receiver_city">
+						<option value="">请选择</option>
+					</select>
+				</div>
+				<div class="form-line">
+					<label class="label" for="receiver_address">
+						<span class="required">*</span>
+						详细地址：
+					</label>
+					<input class="form-item" id="receiver_address" value="{{data.receiverAddress}}" placeholder="请输入详细地址" />
+				</div>
+				<div class="form-line">
+					<label class="label" for="receiver_mobile">
+						<span class="required">*</span>
+						手机号：
+					</label>
+					<input class="form-item" id="receiver_mobile" value="{{data.receiverMobile}}"  placeholder="请输入11位手机号" />
+				</div>
+				<div class="form-line">
+					<label class="label" for="receiver_zip">邮政编码：</label>
+					<input class="form-item" id="receiver_zip" value="{{data.receiverZip}}" placeholder="如：450000" />
+				</div>
+				<div class="form-line">
+					<input type="hidden" id="receiver_id" value="{{data.id}}" />
+					{{#isUpdate}}
+						<a class="btn address-btn">修改收货地址</a>
+					{{/isUpdate}}
+					{{^isUpdate}}
+						<a class="btn address-btn">添加收货地址</a>
+					{{/isUpdate}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

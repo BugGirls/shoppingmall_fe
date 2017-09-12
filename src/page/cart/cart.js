@@ -132,8 +132,8 @@ var page = {
 		$(document).on('click', '.btn-submit', function(){
 			// 如果购物车中商品的总价大于0，则进行提交
 			if (_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0) {
-				// window.location.href = './order-confirm.html';
-				alert("已经提交");
+				window.location.href = './order-confirm.html';
+				// alert("已经提交");
 			} else{
                 _mall.errorTips('请选择商品后再提交');
             }

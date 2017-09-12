@@ -12,8 +12,8 @@ var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 // 处理html定义的方法
 var getHtmlConfig = function(name, title) {
 	return {
-		template 	: './src/view/'+ name +'.html',
-		filename 	: 'view/'+ name +'.html',
+		template 	: './src/view/'+ name +'.html',// 所引用的模板
+		filename 	: 'view/'+ name +'.html',// 生成的html文件的名称与位置
 		inject 		: true,
 		hash 		: true,
 		title 		: title,
@@ -29,6 +29,9 @@ var config = {
 		'list' 				: ['./src/page/list/list.js'],
 		'detail' 			: ['./src/page/detail/detail.js'],
 		'cart' 				: ['./src/page/cart/cart.js'],
+		'order-confirm' 	: ['./src/page/order-confirm/order-confirm.js'],
+		'order-list' 		: ['./src/page/order-list/order-list.js'],
+		'order-detail' 		: ['./src/page/order-detail/order-detail.js'],
 		'user-register'		: ['./src/page/user-register/user-register.js'],
 		'user-login'		: ['./src/page/user-login/user-login.js'],
 		'user-pass-reset'	: ['./src/page/user-pass-reset/user-pass-reset.js'],
@@ -73,9 +76,12 @@ var config = {
 		new ExtractTextPlugin("css/[name].css"),
 		// html模板的处理
 		new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
-		new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
-		new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
+		new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表')),
+		new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情')),
 		new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
+		new HtmlWebpackPlugin(getHtmlConfig('order-confirm', '订单确认')),
+		new HtmlWebpackPlugin(getHtmlConfig('order-list', '订单列表')),
+		new HtmlWebpackPlugin(getHtmlConfig('order-detail', '订单详情')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')),

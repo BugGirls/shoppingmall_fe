@@ -10,7 +10,7 @@ var templatePagination = require('./pagination.string');
 var Pagination = function() {
 	var _this = this;
 	this.defaultOption = {
-		container 	 : null,
+		container 	 : null,// 分页容器，存放分页信息
 		pageNum 	 : 1,
 		pageRange 	 : 3,// 页码显示的范围（2 3 4 ~5~ 6 7 8）
 		onSelectPage : null
@@ -22,6 +22,7 @@ var Pagination = function() {
 			return;
 		}
 		// data() 方法向被选元素附加数据，或者从被选元素获取数据。
+		// $(this).data('value')：获取所点击分页按钮的value值
 		typeof _this.option.onSelectPage == 'function' ? _this.option.onSelectPage($(this).data('value')) : null;
 	});
 };
