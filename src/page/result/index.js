@@ -11,5 +11,11 @@ $(function() {
 	var type = _mall.getUrlParam('type') || 'default';
 	// 显示对应的提示信息
 	var $element = $('.' + type + '-success');
+
+	if (type === 'payment') {// 订单支付完成，需要获取orderNo
+		var orderNo = _mall.getUrlParam('orderNo');
+		$element.find('.order-no').attr('href', $element.find('.order-no').attr('href') + orderNo);
+	}
+	
 	$element.show();
 })
